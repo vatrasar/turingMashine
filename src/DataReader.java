@@ -10,6 +10,8 @@ public class DataReader {
     private String inWord;
     private List<State>stateList;
     private Map<TransitionKey,Transition> transitionsMap;
+    State startState;
+
     public DataReader(String inFileName) {
 
         try {
@@ -46,12 +48,16 @@ public class DataReader {
                 if(startStatesList.contains(id))
                 {
                     isStart=true;
+
                 }
                 if(acceptStatesList.contains(id))
                 {
                     isFinish=true;
                 }
-                stateList.add(new State(id,isFinish,isStart));
+                State newState=new State(id,isFinish,isStart);
+                if(isStart)
+                    this.startState=newState;
+                stateList.add(newState);
 
             }
 
@@ -90,6 +96,10 @@ public class DataReader {
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
+    }
+
+    public State getStartState() {
+        return startState;
     }
 
     private  State getStateFromList(List<State> stateList, int nextStateId) {
