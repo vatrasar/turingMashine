@@ -31,6 +31,7 @@ public class Main {
 		// wyznaczenie stanu poczatkowego
 		State actual = dataReader.getStartState();
 		// PORUSZANIE sie maszyny
+		Message.Configuration(tasma, glowica, actual);
 		while (actual.isFinish() == false) {
 			String haszs = String.valueOf(tasma.get(glowica));
 			TransitionKey key = new TransitionKey(actual, haszs);
@@ -71,6 +72,7 @@ public class Main {
 			}
 			// zmiana stanu
 			actual = tr.nextState;
+			Message.Configuration(tasma, glowica, actual);
 		}
 	}
 
