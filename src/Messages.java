@@ -2,6 +2,8 @@ import java.util.List;
 
 public class Messages {
 
+	String endWord = "";
+
 	public Messages() {
 
 	}
@@ -34,15 +36,18 @@ public class Messages {
 		} else {
 			StringBuilder reverseLeftSite = new StringBuilder(leftSite);
 			leftSite = reverseLeftSite.reverse().toString();
+			endWord = leftSite;
 		}
+		endWord = endWord + rightSite;
 		if (rightSite == "") {
 			rightSite = "#";
 		}
 		System.out.println("(" + state.getId() + ", " + leftSite + ", " + rightSite + ")");
 	}
 
-	public void SummarizeComputes() {
-
+	public void SummarizeComputes(String startWord) {
+		System.out.println("Słowo początkowe: " + startWord);
+		System.out.println("Słowo wynikowe: " + endWord);
 	}
 
 	public void Error() {

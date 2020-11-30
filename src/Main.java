@@ -74,6 +74,7 @@ public class Main {
 			actual = tr.nextState;
 			Message.Configuration(tasma, glowica, actual);
 		}
+		Message.SummarizeComputes(slowo);
 	}
 
 }
