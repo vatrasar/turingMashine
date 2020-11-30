@@ -3,9 +3,10 @@ import java.util.List;
 public class Messages {
 
 	String endWord = "";
+	int counter;
 
 	public Messages() {
-
+		counter = 0;
 	}
 
 	public void TapeExtension(String site) {
@@ -19,6 +20,7 @@ public class Messages {
 	}
 
 	public void Configuration(List<Character> tape, int head, State state) {
+		counter++;
 		String rightSite = "";
 		int i = head;
 		while (i < tape.size() && tape.get(i) != '#') {
@@ -48,6 +50,7 @@ public class Messages {
 	public void SummarizeComputes(String startWord) {
 		System.out.println("Słowo początkowe: " + startWord);
 		System.out.println("Słowo wynikowe: " + endWord);
+		System.out.println("Długość obliczeń: " + counter);
 	}
 
 	public void Error() {
