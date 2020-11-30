@@ -13,6 +13,7 @@ public class Main {
 
 
    public void turingMachine( DataReader dataReader){
+	   Messages Message = new Messages();
     	List<Character> tasma = new ArrayList<Character>();
     	int tasmaPraw=1;// ile blokow 32 ma tasma
     	int glowica=1;
@@ -49,6 +50,7 @@ public class Main {
    		}
    		//rozszerzenie tasmy
    		if(glowica==-1) {
+   			Message.TapeExtension("left");
    			List<Character> tasma2 = new ArrayList<Character>();
    	    	for(int j=0;j<32;j++) {
    	    		tasma2.add(pom);
@@ -61,6 +63,7 @@ public class Main {
    	    	glowica=32;
    	    	tasmaPraw++;
    		}else if(glowica==(tasmaPraw*32+1)) {
+   			Message.TapeExtension("right");
    			for(int j=0;j<32;j++) {
    	    		tasma.add(pom);
    	    	}
