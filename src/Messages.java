@@ -1,3 +1,4 @@
+import java.util.List;
 
 public class Messages {
 	
@@ -15,7 +16,7 @@ public class Messages {
 		}
 	}
 	
-	public void Configuration() {
+	public void Configuration(List<Character> Tape) {
 		
 	}
 	
@@ -24,6 +25,6 @@ public class Messages {
 	}
 	
 	public void Error() {
-		
+		System.out.println("Obliczenia zakończone błędem.");
 	}
 }
