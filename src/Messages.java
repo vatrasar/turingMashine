@@ -21,6 +21,7 @@ public class Messages {
 
 	public void Configuration(List<Character> tape, int head, State state) {
 		counter++;
+		endWord = "";
 		String rightSite = "";
 		int i = head;
 		while (i < tape.size() && tape.get(i) != '#') {
