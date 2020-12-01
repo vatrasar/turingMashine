@@ -5,7 +5,7 @@ import java.util.*;
 
 public class Main {
 	public static void main(String[] args) {
-		String fileName = "test.txt";
+		String fileName = "test6.txt";
 		DataReader dataReader = new DataReader(fileName);
 		turingMachine(dataReader);
 
@@ -18,6 +18,7 @@ public class Main {
 		String slowoDoSprawdzenia = dataReader.getInWord();
 		for (char c : slowoDoSprawdzenia.toCharArray()) {
 				if(dataReader.getAlphabetIn().contains(""+c)==false) {
+					Message.Error();
 					System.exit(1);// slowo nie nalezyt do alfabetu
 				}
 		}
