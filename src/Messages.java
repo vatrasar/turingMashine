@@ -4,6 +4,7 @@ public class Messages {
 
 	String endWord = "";
 	int counter;
+	boolean error = false;
 
 	public Messages() {
 		counter = 0;
@@ -49,12 +50,15 @@ public class Messages {
 	}
 
 	public void SummarizeComputes(String startWord) {
-		System.out.println("Słowo początkowe: " + startWord);
-		System.out.println("Słowo wynikowe: " + endWord);
-		System.out.println("Długość obliczeń: " + counter);
+		if (!error) {
+			System.out.println("Słowo początkowe: " + startWord);
+			System.out.println("Słowo wynikowe: " + endWord);
+			System.out.println("Długość obliczeń: " + counter);
+		}
 	}
 
 	public void Error() {
 		System.out.println("Obliczenia zakończone błędem.");
+		error = true;
 	}
 }
