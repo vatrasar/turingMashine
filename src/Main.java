@@ -14,6 +14,14 @@ public class Main {
 	public static void turingMachine(DataReader dataReader) {
 		Messages Message = new Messages();
 		List<Character> tasma = new ArrayList<Character>();
+		//sprawdzenie czy slowo nalezy do jezyka
+		String slowoDoSprawdzenia = dataReader.getInWord();
+		for (char c : slowoDoSprawdzenia.toCharArray()) {
+				if(dataReader.getAlphabetIn().contains(""+c)==false) {
+					System.exit(1);// slowo nie nalezyt do alfabetu
+				}
+		}
+		
 		int tasmaPraw = 1;// ile blokow 32 ma tasma
 		int glowica = 1;
 		// zapelnienie tasmy
@@ -61,9 +69,9 @@ public class Main {
 				}
 				tasma.clear();
 				tasma.addAll(tasma2);
-				glowica = 32;
+				glowica = 31;
 				tasmaPraw++;
-			} else if (glowica == (tasmaPraw * 32 + 1)) {
+			} else if (glowica == (tasmaPraw * 32)) {
 				Message.TapeExtension("right");
 				for (int j = 0; j < 32; j++) {
 					tasma.add(hasz);
