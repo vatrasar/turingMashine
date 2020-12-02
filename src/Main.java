@@ -22,6 +22,12 @@ public class Main {
 					System.exit(1);// slowo nie nalezyt do alfabetu
 				}
 		}
+		//sprawdzenie czy przejśćia należą do tasmowego alfabetu
+		for (Transition t : dataReader.getTransitionsMap().values()){  
+		  	  if(dataReader.getAlphabetTape().contains(""+t.getInChar())==false ||dataReader.getAlphabetTape().contains(""+t.getOutChar())==false) {
+		  		  System.exit(2);
+		    }
+		}
 		
 		int tasmaPraw = 1;// ile blokow 32 ma tasma
 		int glowica = 1;
@@ -87,3 +93,14 @@ public class Main {
 	}
 
 }
+
+
+
+
+
+
+
+
+
+
+
