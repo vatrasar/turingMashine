@@ -5,8 +5,10 @@ public class Messages {
 	String endWord = "";
 	int counter;
 	boolean error = false;
+	boolean isVerbose;
 
-	public Messages() {
+	public Messages(boolean isVerbose) {
+		this.isVerbose=isVerbose;
 		counter = 0;
 	}
 
@@ -46,7 +48,8 @@ public class Messages {
 		if (rightSite == "") {
 			rightSite = "#";
 		}
-		System.out.println("(" + state.getId() + ", " + leftSite + ", " + rightSite + ")");
+		if(isVerbose)
+			System.out.println("(" + state.getId() + ", " + leftSite + ", " + rightSite + ")");
 	}
 
 	public void SummarizeComputes(String startWord) {

@@ -5,14 +5,17 @@ import java.util.*;
 
 public class Main {
 	public static void main(String[] args) {
-		String fileName = "test6.txt";
+		String fileName = "test5.txt";
+		boolean isVerbose=false;
+
 		DataReader dataReader = new DataReader(fileName);
-		turingMachine(dataReader);
+		turingMachine(dataReader,isVerbose);
+		//dodac zakaz wypisywania obliczen
 
 	}
 
-	public static void turingMachine(DataReader dataReader) {
-		Messages Message = new Messages();
+	public static void turingMachine(DataReader dataReader,boolean isVerbose) {
+		Messages Message = new Messages(isVerbose);
 		List<Character> tasma = new ArrayList<Character>();
 		//sprawdzenie czy slowo nalezy do jezyka
 		String slowoDoSprawdzenia = dataReader.getInWord();

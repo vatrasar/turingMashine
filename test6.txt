@@ -1,0 +1,14 @@
+alfabet tasmowy:
+ab#
+alfabet wejsciowy:
+ab
+slowo wejsciowe:
+bd
+stany:
+1 2
+stan poczatkowy:
+1
+stany akceptujace:
+2
+relacja przejscia:
+1 b 2 b P

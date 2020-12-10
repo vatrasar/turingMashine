@@ -1,0 +1,6 @@
+test1.txt - rozszerzanie się taśmy z lewej, konfiguracja wynikowa z "#" z lewej
+test2.txt - rozszerzanie się taśmy z prawej
+test3.txt - błąd, brak przejścia
+test4.txt - obliczenia nieskończone
+test5.txt - konfiguracja wynikowa z "#" z prawej
+test6.txt - słowo wejściowe składa się ze znaków spoza alfabetu
