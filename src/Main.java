@@ -9,6 +9,7 @@ public class Main {
 		boolean isVerbose=false;
 
 		DataReader dataReader = new DataReader(fileName);
+		System.out.println("Autors:Joanna, Mateusz, Szymon.");
 		turingMachine(dataReader,isVerbose);
 		//dodac zakaz wypisywania obliczen
 
@@ -25,10 +26,16 @@ public class Main {
 					System.exit(1);// slowo nie nalezyt do alfabetu
 				}
 		}
+		// weryfikacja czy alabet zawiera się w taśmowym
+		for(char a:dataReader.getAlphabetIn().toCharArray()) {
+			if(dataReader.getAlphabetTape().contains(""+a)==false) {
+				System.exit(2);
+			}
+		}
 		//sprawdzenie czy przejśćia należą do tasmowego alfabetu
 		for (Transition t : dataReader.getTransitionsMap().values()){  
 		  	  if(dataReader.getAlphabetTape().contains(""+t.getInChar())==false ||dataReader.getAlphabetTape().contains(""+t.getOutChar())==false) {
-		  		  System.exit(2);
+		  		  System.exit(3);
 		    }
 		}
 		

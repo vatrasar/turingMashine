@@ -60,7 +60,9 @@ public class DataReader {
                 stateList.add(newState);
 
             }
-
+            if(startStatesList.size()>1) {
+            	System.exit(0);// wiecej niz 1  stan poczatkowy
+            }
 
             //relations matrix
             transitionsMap=new HashMap<>();
